@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import Drawer from "@material-ui/core/Drawer";
+import Card from "@material-ui/core/Card";
 import "./App.css";
 import Modal from "./Modal";
 import { Canvas } from "./Canvas";
+import { Legend } from "./Legend";
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -78,6 +81,9 @@ class App extends Component {
                 handleInstru={this.toggleModal}
               />
             </div>
+            <Card>
+              <Legend />
+            </Card>
           </div>
         </div>
       </div>

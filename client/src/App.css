@@ -9,6 +9,12 @@
   margin: 20px 0 0 0;
 }
 
+p {
+  background-color: white;
+  color: black;
+  font-size: 1.5rem !important;
+  padding: 10px;
+}
 .centered-container {
   display: flex;
   flex-direction: row;
@@ -21,10 +27,11 @@
   flex-direction: column;
   font-family: "Courier New", Courier, monospace;
   color: white;
+
   font-size: 40px;
   letter-spacing: 3px;
   margin-bottom: 5px;
-  margin-left: 4rem;
+  text-align: center;
 }
 
 .kinnekt-header > p {
