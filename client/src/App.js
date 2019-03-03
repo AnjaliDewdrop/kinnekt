@@ -10,7 +10,6 @@ class App extends Component {
   }
 
   handleButtonClick = () => {
-    console.log('GOT HERE')
     fetch('http://localhost:3001/test', {
       mode: 'cors'
     })
@@ -24,15 +23,32 @@ class App extends Component {
         <header className="kinnekt-header">
           <h1 className="app-title">Kinnekt</h1>
         </header>
-        <div>
-          <div className="exercise">
-            <button className='button' onClick={this.handleButtonClick} >
-              Click here
-            </button>
-            {console.log(this.state.test)}
-            {!(this.state.test) ? (
-              <p>Got here</p>
-            ) : <p>{this.state.test}</p>}
+        <div className='centered-container'>
+          <div className='side-bar'>
+            <ul>
+              <li>
+                Exercise #1
+              </li>
+              <li>
+                Exercise #2
+              </li>
+              <li>
+                Exercise #3
+              </li>
+            </ul>
+          </div>
+          <div className='exercise-wrapper'>
+            <div className="exercise">
+              {console.log(this.state.test)}
+              {!(this.state.test) ? (
+                <p>Got here</p>
+              ) : <p>{this.state.test}</p>}
+            </div>
+            <div className='button-wrapper'>
+              <button id='submit-button' onClick={this.handleButtonClick} >
+                  Submit
+              </button>
+            </div>
           </div>
         </div>
       </div>

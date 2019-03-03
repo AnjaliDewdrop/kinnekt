@@ -1,27 +1,75 @@
 .app {
-  height: 100vh;
-  background-color: #800000;
+  height: 100%;
+  font-family: 'Courier New', Courier, monospace;
+  background-image: linear-gradient(to bottom right, #9e42f4, #f4e541);
+  padding-bottom: 20px;
 }
 
 .app-title {
   margin: 15px;
 }
 
+.centered-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-between;
+}
+
 .kinnekt-header {
   display: flex;
   flex-direction: column;
-  font-size: calc(10px + 2vmin);
+  font-family: 'Courier New', Courier, monospace;
   color: white;
+  font-size: 40px;
+  letter-spacing: 3px;
+  margin-bottom: 5px;
+  margin-left: 20px;
+}
+
+.side-bar {
+  margin-right: 60px;
+  width: 300px;
+  color: white;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.side-bar > ul {
+  list-style-type: none;
+}
+
+.exercise-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  align-items: right;
+  justify-content: right;
 }
 
 .exercise {
   background-color: white;
   height: 500px;
-  width: 500px;
+  width: 700px;
+  border-radius: 10%;
+  margin: 15px;
+  padding: 15px;
 }
 
-.button {
-  color: black;
-  width: 50px;
-  height: 20px;
+.button-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+#submit-button {
+  background-color: green;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  width: 100px;
+  height: 50px;
+  margin-top: 10px;
 }
