@@ -89,7 +89,7 @@ export class Canvas extends Component {
           <button onClick={this.props.handleInstru} className="inst button">
             Instructions
           </button>
-          <button className="button">Submit</button>
+          <button className="button" onClick={this.props.handleSubmit}>Submit</button>
         </div>
       </div>
     );

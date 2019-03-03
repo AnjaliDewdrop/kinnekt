@@ -76,6 +76,7 @@ class App extends Component {
               <Canvas
                 showCanvas={this.state.showCanvas}
                 handleInstru={this.toggleModal}
+                handleSubmit={this.handleButtonClick}
               />
             </div>
           </div>

@@ -1,5 +1,5 @@
 .app {
-  height: 100vh;
+  height: 100%;
   font-family: "Courier New", Courier, monospace;
   background-image: linear-gradient(to bottom right, #9e42f4, #f4e541);
   padding-bottom: 20px;
