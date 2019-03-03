@@ -1,33 +1,92 @@
-.App {
-  text-align: center;
+.app {
+  height: 100%;
+  font-family: 'Courier New', Courier, monospace;
+  background-image: linear-gradient(to bottom right, #9e42f4, #f4e541);
+  padding-bottom: 20px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.app-title {
+  margin: 20px 0 0 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.centered-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-between;
+}
+
+.kinnekt-header {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-family: 'Courier New', Courier, monospace;
   color: white;
+  font-size: 40px;
+  letter-spacing: 3px;
+  margin-bottom: 5px;
+  margin-left: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.kinnekt-header > p {
+  font-size: 16px;
+  letter-spacing: 0;
+  font-weight: 600;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.side-bar {
+  margin-right: 60px;
+  width: 300px;
+  color: white;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.side-bar > ul {
+  padding-top: 30px;
+  list-style-type: none;
+}
+
+.side-bar > ul > li {
+  margin-top: 20px;
+}
+
+.exercise-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  align-items: right;
+  justify-content: right;
+}
+
+.exercise {
+  background-color: white;
+  height: 500px;
+  width: 700px;
+  border-radius: 10%;
+  margin: 15px;
+  padding: 15px;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+#submit-button {
+  background-color: green;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  width: 100px;
+  height: 50px;
+  margin-top: 10px;
+}
+
+#circuit-photo {
+  width: 100%;
+  height: auto;
+  margin: 80px 0;
 }
