@@ -15,6 +15,7 @@
     "concurrently": "3.5.1"
   },
   "dependencies": {
+    "@material-ui/core": "^3.9.2",
     "axios": "^0.18.0",
     "azure-cognitiveservices-customvision-prediction": "^2.0.0",
     "azure-cognitiveservices-customvision-training": "^2.0.0",
