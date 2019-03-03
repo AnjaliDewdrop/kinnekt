@@ -1,9 +1,7 @@
 var express = require('express');
 var router = express.Router();
-
 const util = require("util");
 const fs = require("fs");
-
 const TrainingApi = require("azure-cognitiveservices-customvision-training");
 const PredictionApi = require("azure-cognitiveservices-customvision-prediction");
 
@@ -28,6 +26,7 @@ async function apiCall() {
   console.log("Adding images...");
   let fileUploadPromises = [];
 
+
   const hemlockDir = `${sampleDataRoot}/Hemlock`;
   const hemlockFiles = fs.readdirSync(hemlockDir);
   hemlockFiles.forEach(file => {
@@ -39,7 +38,6 @@ async function apiCall() {
         )
       );
   });
-
   const cherryDir = `${sampleDataRoot}/Japanese Cherry`;
   const japaneseCherryFiles = fs.readdirSync(cherryDir);
   japaneseCherryFiles.forEach(file => {
@@ -52,10 +50,10 @@ async function apiCall() {
       );
   });
 
+
   await Promise.all(fileUploadPromises);
   console.log("Training...");
   let trainingIteration = await trainer.trainProject(sampleProject.id);
-
   // Wait for training to complete
   console.log("Training started...");
   while (trainingIteration.status == "Training") {
@@ -97,6 +95,8 @@ async function apiCall() {
 
 /* GET test */
 router.get('/', function(req, res, next) {
+
+
   apiCall();
   res.send({ message: 'HI!' });
 });

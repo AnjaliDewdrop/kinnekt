@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import Drawer from "@material-ui/core/Drawer";
+import Card from "@material-ui/core/Card";
 import "./App.css";
 import Modal from "./Modal";
 import { Canvas } from "./Canvas";
+import { Legend } from "./Legend";
 
 class App extends Component {
   constructor(props) {
@@ -25,6 +27,10 @@ class App extends Component {
     this.setState({ rightAnswer: null });
   }
 
+  toggleModal = e => {
+    this.setState({ showModal: !this.state.showModal });
+  };
+
   handleButtonClick = () => {
     if (this.state.rightAnswerCount % 2 == 0) {
       this.setState({ rightAnswer: true });
@@ -33,7 +39,6 @@ class App extends Component {
     }
 
     this.setState({ rightAnswerCount: this.state.rightAnswerCount + 1 });
-
     fetch("http://localhost:3001/test", {
       mode: "cors"
     })
@@ -63,6 +68,7 @@ class App extends Component {
               </p>
             </Modal>
           ) : null}
+
           {(this.state.rightAnswer !== null) ? (
             this.state.rightAnswer ? (
               <Modal>
@@ -114,6 +120,9 @@ class App extends Component {
                 handleSubmit={this.handleButtonClick}
               />
             </div>
+            <Card>
+              <Legend />
+            </Card>
           </div>
         </div>
       </div>
