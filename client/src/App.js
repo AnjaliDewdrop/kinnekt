@@ -3,13 +3,16 @@ import Drawer from "@material-ui/core/Drawer";
 import "./App.css";
 import Modal from "./Modal";
 import { Canvas } from "./Canvas";
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       test: null,
       left: false,
-      showModal: false
+      showModal: false,
+      rightAnswer: null,
+      rightAnswerCount: 0,
     };
     this.toggleModal.bind(this);
   }
@@ -18,14 +21,25 @@ class App extends Component {
     this.setState({ showModal: !this.state.showModal });
   };
 
+  toggleAnswerModal = () => {
+    this.setState({ rightAnswer: null });
+  }
+
   handleButtonClick = () => {
+    if (this.state.rightAnswerCount % 2 == 0) {
+      this.setState({ rightAnswer: true });
+    } else {
+      this.setState({ rightAnswer: false });
+    }
+
+    this.setState({ rightAnswerCount: this.state.rightAnswerCount + 1 });
+
     fetch("http://localhost:3001/test", {
       mode: "cors"
     })
       .then(response => {
         return response.json();
-      })
-      .then(data => this.setState({ test: data.message }));
+      });
   };
 
   toggleDrawer = bool => () => {
@@ -48,6 +62,27 @@ class App extends Component {
                 work irrespective of whether the initial given switch is closed.{" "}
               </p>
             </Modal>
+          ) : null}
+          {(this.state.rightAnswer !== null) ? (
+            this.state.rightAnswer ? (
+              <Modal>
+                <button className='answer-modal-x-button' id="xbutton" onClick={this.toggleAnswerModal}>
+                  X
+                </button>
+                <div className='answer-text-container'>
+                  Correct!
+                </div>
+              </Modal>
+            ) : (
+              <Modal>
+                <button className='answer-modal-x-button' id="xbutton" onClick={this.toggleAnswerModal}>
+                  X
+                </button>
+                <div className='answer-text-container'>
+                  Incorrect. Try again!
+                </div>
+              </Modal>
+            )
           ) : null}
         </div>
         <button className="btn-app menu" onClick={this.toggleDrawer(true)}>

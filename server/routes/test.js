@@ -97,8 +97,8 @@ async function apiCall() {
 
 /* GET test */
 router.get('/', function(req, res, next) {
-  apiCall()
-  res.send({ message: 'HI!!!' })
+  apiCall();
+  res.send({ message: 'HI!' });
 });
 
 module.exports = router;

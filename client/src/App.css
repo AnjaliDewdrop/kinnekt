@@ -9,6 +9,14 @@
   margin: 20px 0 0 0;
 }
 
+.answer-modal-x-button {
+  margin-left: 15px;
+}
+
+.answer-text-container {
+  margin-top: 45px;
+}
+
 .centered-container {
   display: flex;
   flex-direction: row;
