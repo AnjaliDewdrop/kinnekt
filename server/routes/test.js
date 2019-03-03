@@ -1,24 +1,14 @@
 var express = require('express');
 var router = express.Router();
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-/* GET test */
-router.get('/', function(req, res, next) {
-=======
-const util = require('util');
-const fs = require('fs');
-=======
 const util = require("util");
 const fs = require("fs");
->>>>>>> 8fa2939715e3ef0fb97c858dcf8171f84d95c33f
 const TrainingApi = require("azure-cognitiveservices-customvision-training");
 const PredictionApi = require("azure-cognitiveservices-customvision-prediction");
 
 const setTimeoutPromise = util.promisify(setTimeout);
 
-const trainingKey = "7176670c7aa14a749414cc93894c1211";
-const predictionKey = "3bc0bc8e42eb428ab9a2d0aff467674c";
+const trainingKey = "bcc5c88e3d9e45f3b9676ca34321aa09";
+const predictionKey = "d46476deaab6464380f96cd9fbabb210";
 const sampleDataRoot = __dirname + "/voltDivider";
 
 const endPoint = "https://southcentralus.api.cognitive.microsoft.com";
@@ -36,6 +26,7 @@ async function apiCall() {
   console.log("Adding images...");
   let fileUploadPromises = [];
 
+
   const hemlockDir = `${sampleDataRoot}/Hemlock`;
   const hemlockFiles = fs.readdirSync(hemlockDir);
   hemlockFiles.forEach(file => {
@@ -47,7 +38,6 @@ async function apiCall() {
         )
       );
   });
-
   const cherryDir = `${sampleDataRoot}/Japanese Cherry`;
   const japaneseCherryFiles = fs.readdirSync(cherryDir);
   japaneseCherryFiles.forEach(file => {
@@ -60,10 +50,10 @@ async function apiCall() {
       );
   });
 
+
   await Promise.all(fileUploadPromises);
   console.log("Training...");
   let trainingIteration = await trainer.trainProject(sampleProject.id);
-
   // Wait for training to complete
   console.log("Training started...");
   while (trainingIteration.status == "Training") {
@@ -105,14 +95,10 @@ async function apiCall() {
 
 /* GET test */
 router.get('/', function(req, res, next) {
-<<<<<<< HEAD
-    kinnekt()
->>>>>>> 7299d57c6818a9996e176908c6b2eaa617f7a47b
-    res.send({ message: 'HI!!!' })
-=======
-  apiCall()
-  res.send({ message: 'HI!!!' })
->>>>>>> 8fa2939715e3ef0fb97c858dcf8171f84d95c33f
+
+
+  apiCall();
+  res.send({ message: 'HI!' });
 });
 
 module.exports = router;
