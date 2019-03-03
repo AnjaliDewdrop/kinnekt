@@ -1,16 +1,22 @@
 import React, { Component } from "react";
 import Drawer from "@material-ui/core/Drawer";
 import "./App.css";
-
+import Modal from "./Modal";
 import { Canvas } from "./Canvas";
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       test: null,
-      left: false
+      left: false,
+      showModal: false
     };
+    this.toggleModal.bind(this);
   }
+
+  toggleModal = e => {
+    this.setState({ showModal: !this.state.showModal });
+  };
 
   handleButtonClick = () => {
     fetch("http://localhost:3001/test", {
@@ -29,7 +35,22 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <button className="menu" onClick={this.toggleDrawer(true)}>
+        <div>
+          {this.state.showModal ? (
+            <Modal>
+              <button id="xbutton" onClick={this.toggleModal}>
+                X
+              </button>
+              <h1>Exercise 1</h1>
+              <p>
+                Series vs Parallel Add an additional lightbulb and a second
+                switch to control it. Remember, the lightbulb you added should
+                work irrespective of whether the initial given switch is closed.{" "}
+              </p>
+            </Modal>
+          ) : null}
+        </div>
+        <button className="btn-app menu" onClick={this.toggleDrawer(true)}>
           Menu
         </button>
         <header className="kinnekt-header">
@@ -52,8 +73,10 @@ class App extends Component {
         <div className="centered-container">
           <div className="exercise-wrapper">
             <div className="exercise">
-              {console.log(this.state.test)}
-              <Canvas />
+              <Canvas
+                showCanvas={this.state.showCanvas}
+                handleInstru={this.toggleModal}
+              />
             </div>
           </div>
         </div>

@@ -12,3 +12,39 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+#modal > div {
+  background-color: #b266b2;
+  max-width: 500px;
+  max-height: 500px;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  min-width: 100px;
+  min-height: 100px;
+}
+
+#modal:empty {
+  display: none;
+}
+#modal {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Handlee", sans-serif;
+  font-size: 1.5rem;
+}
+
+#xbutton {
+  float: right;
+  cursor: pointer;
+  font-size: 15px;
+}
