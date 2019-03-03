@@ -1,27 +1,108 @@
 .app {
   height: 100vh;
-  background-color: #800000;
+  font-family: "Courier New", Courier, monospace;
+  background-image: linear-gradient(to bottom right, #9e42f4, #f4e541);
+  padding-bottom: 20px;
 }
 
 .app-title {
-  margin: 15px;
+  margin: 20px 0 0 0;
+}
+
+.centered-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-between;
 }
 
 .kinnekt-header {
   display: flex;
   flex-direction: column;
-  font-size: calc(10px + 2vmin);
+  font-family: "Courier New", Courier, monospace;
   color: white;
+  font-size: 40px;
+  letter-spacing: 3px;
+  margin-bottom: 5px;
+  margin-left: 4rem;
+}
+
+.kinnekt-header > p {
+  font-size: 16px;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+
+.side-bar {
+  margin-right: 60px;
+  color: black;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.side-bar > ul {
+  padding-top: 30px;
+  list-style-type: none;
+}
+
+.side-bar > ul > li {
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.exercise-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  align-items: right;
+  justify-content: right;
 }
 
 .exercise {
   background-color: white;
   height: 500px;
-  width: 500px;
+  width: 700px;
+  border-radius: 1%;
+  margin: 15px;
+  padding: 15px;
 }
 
-.button {
-  color: black;
-  width: 50px;
-  height: 20px;
+.button-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+#submit-button {
+  background: #b266b2;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  width: 100px;
+  height: 50px;
+  margin-top: 10px;
+}
+
+#circuit-photo {
+  width: 100%;
+  height: auto;
+  margin: 80px 0;
+}
+
+button {
+  background: none;
+  border: none;
+  color: white;
+}
+
+.menu {
+  background: #b266b2;
+  font-size: 1rem;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 4px;
+  font-weight: 600;
+  margin-top: ;
 }

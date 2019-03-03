@@ -1,11 +1,23 @@
 import React, { Component } from "react";
-import purp from "./purple.jpg";
+import circuitPhoto from "./photos/circuit.png";
 const style = {
   canvas: {
     background: "transparent"
   },
   pic: {
     display: "none"
+  },
+  btn: {
+    backgroundColor: "#b266b2",
+    fontSize: "16px",
+    fontWeight: 600,
+    border: "none",
+    width: "100px",
+    height: "50px"
+  },
+  btnWrapper: {
+    display: "flex",
+    justifyContent: "space-between"
   }
 };
 
@@ -75,12 +87,16 @@ export class Canvas extends Component {
           onMouseOut={this.noDraw}
           onMouseUp={this.noDraw}
           style={style.canvas}
-          width={640}
+          width={700}
           height={425}
         />
-        <img ref="image" src={purp} alt="pic" style={style.pic} />
-        <button onClick={this.clear}>Clear</button>
-        <button onClick={this.screenshot}>Screenshot</button>
+        <img ref="image" src={circuitPhoto} alt="pic" style={style.pic} />
+        <div style={style.btnWrapper}>
+          <button style={style.btn} onClick={this.clear}>
+            Clear
+          </button>
+          <button style={style.btn}>Submit</button>
+        </div>
       </div>
     );
   }

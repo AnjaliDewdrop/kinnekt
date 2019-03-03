@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Drawer from "@material-ui/core/Drawer";
 import "./App.css";
 
+import { Canvas } from "./Canvas";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +13,6 @@ class App extends Component {
   }
 
   handleButtonClick = () => {
-    console.log("GOT HERE");
     fetch("http://localhost:3001/test", {
       mode: "cors"
     })
@@ -29,35 +29,32 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <button onClick={this.toggleDrawer(true)}>
-          <img
-            height="30"
-            width="30"
-            src="https://cdn4.iconfinder.com/data/icons/tupix-1/30/list-512.png"
-          />
+        <button className="menu" onClick={this.toggleDrawer(true)}>
+          Menu
         </button>
         <header className="kinnekt-header">
           <h1 className="app-title">Kinnekt</h1>
+          <p>
+            This webapp aims to help you learn about circuits without having to
+            get the hardware yourself.
+          </p>
         </header>
 
         <Drawer open={this.state.left} onClose={this.toggleDrawer(false)}>
-          <div
-            tabIndex={0}
-            role="button"
-            onClick={this.toggleDrawer(false)}
-            onKeyDown={this.toggleDrawer(false)}
-          >
-            bleeh
+          <div class="side-bar">
+            <ul>
+              <li>Exercise #1</li>
+              <li>Exercise #2</li>
+              <li>Exercise #3</li>
+            </ul>
           </div>
-          <div>Lesson1</div>
         </Drawer>
-        <div>
-          <div className="exercise">
-            <button className="button" onClick={this.handleButtonClick}>
-              Click here
-            </button>
-            {console.log(this.state.test)}
-            {!this.state.test ? <p>Got here</p> : <p>{this.state.test}</p>}
+        <div className="centered-container">
+          <div className="exercise-wrapper">
+            <div className="exercise">
+              {console.log(this.state.test)}
+              <Canvas />
+            </div>
           </div>
         </div>
       </div>
