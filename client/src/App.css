@@ -6,7 +6,7 @@
 }
 
 .app-title {
-  margin: 15px;
+  margin: 20px 0 0 0;
 }
 
 .centered-container {
@@ -27,6 +27,12 @@
   margin-left: 20px;
 }
 
+.kinnekt-header > p {
+  font-size: 16px;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+
 .side-bar {
   margin-right: 60px;
   width: 300px;
@@ -36,7 +42,12 @@
 }
 
 .side-bar > ul {
+  padding-top: 30px;
   list-style-type: none;
+}
+
+.side-bar > ul > li {
+  margin-top: 20px;
 }
 
 .exercise-wrapper {
@@ -72,4 +83,10 @@
   width: 100px;
   height: 50px;
   margin-top: 10px;
+}
+
+#circuit-photo {
+  width: 100%;
+  height: auto;
+  margin: 80px 0;
 }
