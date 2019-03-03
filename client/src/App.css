@@ -1,6 +1,6 @@
 .app {
-  height: 100%;
-  font-family: 'Courier New', Courier, monospace;
+  height: 100vh;
+  font-family: "Courier New", Courier, monospace;
   background-image: linear-gradient(to bottom right, #9e42f4, #f4e541);
   padding-bottom: 20px;
 }
@@ -19,12 +19,12 @@
 .kinnekt-header {
   display: flex;
   flex-direction: column;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   color: white;
   font-size: 40px;
   letter-spacing: 3px;
   margin-bottom: 5px;
-  margin-left: 20px;
+  margin-left: 4rem;
 }
 
 .kinnekt-header > p {
@@ -35,8 +35,7 @@
 
 .side-bar {
   margin-right: 60px;
-  width: 300px;
-  color: white;
+  color: black;
   font-size: 20px;
   font-weight: 800;
 }
@@ -48,6 +47,7 @@
 
 .side-bar > ul > li {
   margin-top: 20px;
+  cursor: pointer;
 }
 
 .exercise-wrapper {
@@ -62,7 +62,7 @@
   background-color: white;
   height: 500px;
   width: 700px;
-  border-radius: 10%;
+  border-radius: 1%;
   margin: 15px;
   padding: 15px;
 }
@@ -75,7 +75,7 @@
 }
 
 #submit-button {
-  background-color: green;
+  background: #b266b2;
   color: white;
   font-size: 16px;
   font-weight: 600;
@@ -89,4 +89,30 @@
   width: 100%;
   height: auto;
   margin: 80px 0;
+}
+
+.btn-app {
+  background: none;
+  border: none;
+  color: white;
+}
+
+.menu {
+  background: #b266b2;
+  font-size: 1rem;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  -webkit-box-shadow: 9px 8px 17px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 9px 8px 17px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 5px 15px 1px rgba(0, 0, 0, 0.75);
+}
+
+button:hover {
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  background-color: #c96999;
 }

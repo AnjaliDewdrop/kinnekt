@@ -3,13 +3,14 @@ var router = express.Router();
 
 const util = require("util");
 const fs = require("fs");
+
 const TrainingApi = require("azure-cognitiveservices-customvision-training");
 const PredictionApi = require("azure-cognitiveservices-customvision-prediction");
 
 const setTimeoutPromise = util.promisify(setTimeout);
 
-const trainingKey = "7176670c7aa14a749414cc93894c1211";
-const predictionKey = "3bc0bc8e42eb428ab9a2d0aff467674c";
+const trainingKey = "bcc5c88e3d9e45f3b9676ca34321aa09";
+const predictionKey = "d46476deaab6464380f96cd9fbabb210";
 const sampleDataRoot = __dirname + "/voltDivider";
 
 const endPoint = "https://southcentralus.api.cognitive.microsoft.com";

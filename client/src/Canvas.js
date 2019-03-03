@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import purp from "./purple.jpg";
+import circuitPhoto from "./photos/circuit.png";
+import "./Canvas.css";
+
 const style = {
   canvas: {
     background: "transparent"
@@ -15,7 +17,8 @@ export class Canvas extends Component {
     this.state = {
       draw: false,
       x: -10,
-      y: -10
+      y: -10,
+      showModal: this.props.showModal
     };
     this.draw = false;
   }
@@ -23,7 +26,7 @@ export class Canvas extends Component {
   componentDidMount() {
     this.canvas = this.refs.canvas;
     this.ctx = this.canvas.getContext("2d");
-    this.ctx.lineWidth = 10;
+    this.ctx.lineWidth = 4;
     console.log(this.refs.image);
     this.refs.image.onload = () => {
       this.ctx.drawImage(this.refs.image, 0, 0);
@@ -75,12 +78,19 @@ export class Canvas extends Component {
           onMouseOut={this.noDraw}
           onMouseUp={this.noDraw}
           style={style.canvas}
-          width={640}
+          width={700}
           height={425}
         />
-        <img ref="image" src={purp} alt="pic" style={style.pic} />
-        <button onClick={this.clear}>Clear</button>
-        <button onClick={this.screenshot}>Screenshot</button>
+        <img ref="image" src={circuitPhoto} alt="pic" style={style.pic} />
+        <div className="btnWrapper">
+          <button className="button" onClick={this.clear}>
+            Clear
+          </button>
+          <button onClick={this.props.handleInstru} className="inst button">
+            Instructions
+          </button>
+          <button className="button">Submit</button>
+        </div>
       </div>
     );
   }
